@@ -1,0 +1,25 @@
+# Compiled Java class files (بيمنع رفع الكود بعد ما يتعمله Run)
+*.class
+
+# NetBeans (عشان يحمي ملفات جهازك إنتي)
+nbproject/
+build/
+dist/
+nbbuild/
+
+# IntelliJ IDEA (لو حد من التيم بيستخدمه)
+.idea/
+out/
+*.iml
+*.iws
+*.ipr
+
+# Eclipse (لو حد بيستخدمه)
+.metadata/
+.classpath
+.project
+.settings/
+bin/
+
+# VS Code (لو حد فتح الكود بيه)
+.vscode/
