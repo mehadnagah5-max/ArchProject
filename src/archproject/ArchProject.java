@@ -4,17 +4,17 @@
  */
 package archproject;
 
+import java.util.List;
+import java.util.Scanner;
+
 /**
  *
  * @author mehad
  */
 public class ArchProject {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
     }
     
 }
