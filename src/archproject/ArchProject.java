@@ -4,6 +4,7 @@
  */
 package archproject;
 
+<<<<<<< HEAD
 import java.util.*;
 
 public class ArchProject {
@@ -61,6 +62,19 @@ public class ArchProject {
                 sc.nextLine();
                 }
        }
+=======
+import java.util.List;
+import java.util.Scanner;
+
+/**
+ *
+ * @author mehad
+ */
+public class ArchProject {
+
+    public static void main(String[] args) {
+        
+>>>>>>> master
     }
 }
 
