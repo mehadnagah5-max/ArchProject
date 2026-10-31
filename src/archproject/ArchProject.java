@@ -3,8 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package archproject;
-
-<<<<<<< HEAD
 import java.util.*;
 
 public class ArchProject {
@@ -16,17 +14,19 @@ public class ArchProject {
        try{
         System.out.println("enter number of variables : ");
          numberOfVariables = sc.nextInt(); // 2
-        if(numberOfVariables >=1 && numberOfVariables <=5){
+        if(numberOfVariables >=2 && numberOfVariables <=4){
             break;
         }
         else{
-            System.out.println("enter a psoitive integer between 1 and 5  ");
+            System.out.println("enter a integer between 2 and 4  ");
         }
        }
        catch(InputMismatchException e){
            System.out.println("enter integer only ");
            sc.nextLine();
        }
+           System.out.println("Enter the Boolean Function (e.g AB+C): ");
+           String booleanFunction = sc.nextLine();
     }
        int key = 1 ;
        while(key !=5){
@@ -62,22 +62,8 @@ public class ArchProject {
                 sc.nextLine();
                 }
        }
-=======
-import java.util.List;
-import java.util.Scanner;
-
-/**
- *
- * @author mehad
- */
-public class ArchProject {
-
-    public static void main(String[] args) {
-        
->>>>>>> master
-    }
+    } 
 }
-
        
            
        
