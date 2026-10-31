@@ -14,20 +14,21 @@ public class ArchProject {
        try{
         System.out.println("enter number of variables : ");
          numberOfVariables = sc.nextInt(); // 2
-        if(numberOfVariables >=2 && numberOfVariables <=4){
+          sc.nextLine();
+        if(numberOfVariables >=2 ){
             break;
         }
         else{
-            System.out.println("enter a integer between 2 and 4  ");
+            System.out.println("Number of variables must be at least 2 ");
         }
        }
        catch(InputMismatchException e){
            System.out.println("enter integer only ");
            sc.nextLine();
-       }
-           System.out.println("Enter the Boolean Function (e.g AB+C): ");
-           String booleanFunction = sc.nextLine();
+       }  
     }
+       System.out.println("Enter the Boolean Function (e.g AB+C): ");
+           String booleanFunction = sc.nextLine();
        int key = 1 ;
        while(key !=5){
         System.out.println("enter a menu option :");
