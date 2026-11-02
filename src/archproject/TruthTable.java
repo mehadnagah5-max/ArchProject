@@ -1,35 +1,44 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package archproject;
-import java.util.ArrayList;
-import java.util.List;
+
+import java.util.*;
 
 public class TruthTable {
     private int numOfVars;
     private int numOfRows;
     private int[] outputs;
     private int[][] table;
+    private String booleanExpression;
 
-    public TruthTable(int numOfVars, int[] outputs){
+    public TruthTable(int numOfVars, String booleanExpression){
+        if (numOfVars <= 1) {
+            throw new IllegalArgumentException("Error: Number of variables must be greater than 1");
+        }
         this.numOfVars = numOfVars;
-        this.outputs = outputs;
+        this.booleanExpression = booleanExpression;
         this.numOfRows = (int) Math.pow(2, numOfVars);
         this.table = new int[numOfRows][numOfVars];
+        this.outputs = new int [numOfRows];
         generateTable();
     }
 
     public void generateTable(){
+        BooleanFunction bf = new BooleanFunction(booleanExpression);
+        Queue<String> tokens = bf.Tokenization(booleanExpression);
+        Queue<String> postfixQueue = bf.Postfix(tokens);
 
         for(int i=0; i<numOfRows; i++){
+            Map<String, Integer> variableValuesMap = new HashMap<>();
 
             for(int j=0; j<numOfVars; j++){
 
                 int d = (int) Math.pow(2, numOfVars - 1 - j);
-                table[i][j] = (i/d) % 2;
-            }
+                int bitValue = (i/d) % 2;
+                table[i][j] = bitValue;
 
+                char varName = (char) ('A' + j);
+                variableValuesMap.put(String.valueOf(varName), bitValue);
+            }
+            this.outputs[i] = bf.evaluation(postfixQueue, variableValuesMap);
         }
     }
 
