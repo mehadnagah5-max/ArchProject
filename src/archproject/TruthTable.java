@@ -9,27 +9,27 @@ public class TruthTable {
     private int[][] table;
     private String booleanExpression;
 
-    public TruthTable(int numOfVars, String booleanExpression){
+    public TruthTable(int numOfVars, String booleanExpression){ // 2 , A.B+C
         if (numOfVars <= 1) {
             throw new IllegalArgumentException("Error: Number of variables must be greater than 1");
         }
-        this.numOfVars = numOfVars;
-        this.booleanExpression = booleanExpression;
-        this.numOfRows = (int) Math.pow(2, numOfVars);
+        this.numOfVars = numOfVars; // 2 
+        this.booleanExpression = booleanExpression; // A.B+C
+        this.numOfRows = (int) Math.pow(2, numOfVars); // 4 
         this.table = new int[numOfRows][numOfVars];
         this.outputs = new int [numOfRows];
         generateTable();
     }
 
     public void generateTable(){
-        BooleanFunction bf = new BooleanFunction(booleanExpression);
-        Queue<String> tokens = bf.Tokenization(booleanExpression);
-        Queue<String> postfixQueue = bf.Postfix(tokens);
+        BooleanFunction bf = new BooleanFunction(booleanExpression); 
+        Queue<String> tokens = bf.Tokenization(booleanExpression);// boolean Expression to Tokens
+        Queue<String> postfixQueue = bf.Postfix(tokens); // Tokens to Postfix 
 
-        for(int i=0; i<numOfRows; i++){
+        for(int i=0; i<numOfRows; i++){ // < not <= because it starts from zero
             Map<String, Integer> variableValuesMap = new HashMap<>();
 
-            for(int j=0; j<numOfVars; j++){
+            for(int j=0; j<numOfVars; j++){ // < not <= because it starts from zero
 
                 int d = (int) Math.pow(2, numOfVars - 1 - j);
                 int bitValue = (i/d) % 2;
@@ -46,7 +46,7 @@ public class TruthTable {
         List<Integer> minTerms = new ArrayList<>();
 
         for(int i=0; i<numOfRows; i++){
-            if(outputs[i] == 1){
+            if(outputs[i] == 1){ // SOP
                 minTerms.add(i);
             }
         }

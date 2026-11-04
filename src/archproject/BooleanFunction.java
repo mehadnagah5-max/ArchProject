@@ -18,7 +18,7 @@ public class BooleanFunction {
     public Queue<String> Tokenization (String boolFunc){
         Queue<String> tokens = new LinkedList<>();
 
-        String clearExpr = boolFunc.replaceAll("\\s", "");
+        String clearExpr = boolFunc.replaceAll("\\s", ""); // \\s means white space or tab or new line 
 
         for(int i=0; i < clearExpr.length(); i++){
             char c =clearExpr.charAt(i);
@@ -35,7 +35,7 @@ public class BooleanFunction {
         return tokens;
     }
 
-    private int Precedence(String operator){
+    private int Precedence(String operator){ // As the priority increases the number increases
         switch (operator){
             case "!" : return 3;
             case "." : return 2;
@@ -84,7 +84,7 @@ public class BooleanFunction {
         return postfix;
     }
 
-    private int performOperation(String operator, int val1, int val2){
+    private int performOperation(String operator, int val1, int val2){ 
         switch (operator) {
             case ".":
                 if (val1 == 1 && val2 == 1) {
@@ -103,7 +103,7 @@ public class BooleanFunction {
         }
     }
 
-    private int performNotOperation(int val){
+    private int performNotOperation(int val){ // about not operator 
         if(val == 1)
             return 0;
         else
