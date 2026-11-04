@@ -51,8 +51,8 @@ public class Kmap {
                 rowBits = numVars / 2;
                 colBits = numVars - rowBits;
 
-                int MapRows = 1 << rowBits;
-                int MapColumns = 1 << colBits;
+                int MapRows = 1 << rowBits; // Left Shift Operator
+                int MapColumns = 1 << colBits; // Left Shift Operator
 
                 map = new int[MapRows][MapColumns];
 
